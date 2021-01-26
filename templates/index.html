@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    
+    <meta charset="UTF=8">
+    <title>Audio Uploader</title>
+</head>
+
+<body style="background-color:powderblue;">
+    {% include 'notification.html' %}
+
+    <center>
+        <h1>Audio Recorder</h1>
+        <br><hr><br>
+ 
+    <br><br>
+    <h1>Recorder</h1> 
+    <div id="controls"> <br>
+        <button id="recordButton" class="ui button">Record</button>
+        <button class="ui labeled icon button" id="pauseButton">
+            <i class="pause icon"></i>
+            Pause
+        </button>
+        <button class="ui button" id="stopButton">
+            <i class="stop icon"></i>
+            Stop
+        </button>
+    </div>
+    <div id="formats">Format: Start recording.</div>
+    <p><strong>Recordings:</strong></p>
+    <ol id="recordingsList"></ol><br>
+    <div>
+    <form action="{{url_for('prediction')}}" method="POST">
+    <input type="submit" value="Predict" class="ui button">     
+    </form>
+    </div>
+    <h3> Predicted emotion : <strong>{{ result }}</strong></h3>
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="/static/js/app.js"></script>
+    </center>
+
+
+</body>
+
+</html>
